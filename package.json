@@ -7,8 +7,8 @@
     "start":"node index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "ranon rat",
+  "license": "GNU",
   "dependencies": {
     "discord": "^0.8.2",
     "tmi.js": "^1.5.0"
