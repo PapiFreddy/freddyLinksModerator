@@ -1,7 +1,5 @@
 {
-    "discord":{
-        "token":""
-    },
+    "token":"",
     "twitch":{
 
         "identity":{
