@@ -1,41 +1,63 @@
 //constants
-const tmi= require("tmi.js")
-    ,Discord=require("tmi.js"),
-    discordClient=new Discord.Client()
-    ,{discord,twitch}=require("./settings.json")
-    , twitchClient = new tmi.Client(twitch);
-
+const tmi = require("tmi.js"),
+  discord = require("discord.js"),
+  client = new discord.Client(),
+  settings = require("./settings.json"),
+  tClient = new tmi.Client(settings.twitch);
 //discord
-
-discordClient.on("ready",()=>{
-    console.log("yeah , el bot funciona");
-})
+client.on("ready", () => {
+  console.log("yeah , el bot funciona");
+});
 // twitch
-twitchClient.connect();
-discordClient.on("message",async msg=>{
-    if(msg.content==="$start"){
-        setInterval(()=>{
-            twitchClient.on("message",(channel,tags,message,self)=>{
-                for( let x in message.split(" ")){
-                    // repasa el contenido del mensaje
-                    if(x.slice(0,5)==="http:"||x.slice(0,6)==="https:"){
-                        discordClient.channels.get("id channel after verification").send(JSON.stringify({name:self,link:x}));
-                     
-                        // debe de enviar al mensaje de verificacion
-                        break;   
-                    }
-                }
-            });
-        },200)
+var links=[]
+tClient.connect();
+var diference={
+  after:0,
+  before:0
+  
+}
+tClient.on("message", async (channel, tags, message, self) => {
+  let LinkReview = message.split(" ");
+  
+  for (let x in LinkReview) {
+    // repasa el contenido del mensaje
+
+    if (
+      LinkReview[x].slice(0, 5) === "http:" ||
+      LinkReview[x].slice(0, 6) === "https:"
+    ) {
+      links.push(JSON.stringify({ name: tags.username, link: LinkReview[x] }));
+      diference.after=links.length;
+      console.log("es un link")
+      // debe de enviar al mensaje de verificacion
+      break;
     }
+  }
 });
-discordClient.on("messageReactionAdd",async(reaction,user)=>{
-    if(reaction.emoji.name===":thumbsup:"){
+
+client.on("message", async msg => {
+  if (msg.content === "$start") {
+    setInterval(() => {
+      console.log(diference.after,diference.before)
+      if(diference.after!=diference.before){
+        client.channels.cache.get("777921267780026429").send(links[links.length-1])
     
-        let content=JSON.parse(reaction.message)
-        discordClient.channels.get("").send(`mensaje verificado de ${content.name} : ${content.link} `)
-        }
         
+      }
+       diference.before=links.length;
+      
+
+    }, 200);
     
+  }
 });
-discordClient.login(discord.token)
+client.on("messageReactionAdd", async (reaction, user) => {
+  if (reaction.emoji.name === ":thumbsup:") {
+    let content = JSON.parse(reaction.message);
+    client.channels
+      .get("777921324189614121")
+      .send(`mensaje verificado de ${content.name} : ${content.link} `);
+  }
+});
+
+client.login(settings.token);
