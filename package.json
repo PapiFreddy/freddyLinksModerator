@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "this is a bot for moderate the links who you share in twitch",
   "main": "index.js",
-  "repository": {"https://github.com/PapiFreddy/freddyLinksModerator"},
+  "repository": "https://github.com/PapiFreddy/freddyLinksModerator",
   "scripts": {
     "start":"node index.js"
   },
