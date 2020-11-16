@@ -18,7 +18,7 @@ discordClient.on("message",async msg=>{
             twitchClient.on("message",(channel,tags,message,self)=>{
                 for( let x in message.split(" ")){
                     // repasa el contenido del mensaje
-                    if(x.slice(0,5)==="http."||x.slice(0,6)==="https."){
+                    if(x.slice(0,5)==="http:"||x.slice(0,6)==="https:"){
                         discordClient.channels.get("id channel after verification").send(JSON.stringify({name:self,link:x}));
                      
                         // debe de enviar al mensaje de verificacion
