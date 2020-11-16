@@ -6,7 +6,7 @@ const tmi= require("tmi.js")
     , twitchClient = new tmi.Client(twitch);
 
 //discord
-var links=[]
+
 discordClient.on("ready",()=>{
     console.log("yeah , el bot funciona");
 })
@@ -19,8 +19,8 @@ discordClient.on("message",async msg=>{
                 for( let x in message.split(" ")){
                     // repasa el contenido del mensaje
                     if(x.slice(0,5)==="http."||x.slice(0,6)==="https."){
-                        discordClient.channels.get("id channel after verification").send(`el usuario ${self} a enviado ${x}`);
-                        links.push({name:self,link:x})
+                        discordClient.channels.get("id channel after verification").send(JSON.stringify({name:self,link:x}));
+                     
                         // debe de enviar al mensaje de verificacion
                         break;   
                     }
@@ -31,7 +31,11 @@ discordClient.on("message",async msg=>{
 });
 discordClient.on("messageReactionAdd",async(reaction,user)=>{
     if(reaction.emoji.name===":thumbsup:"){
-        discordClient.channels.get("").send(`mensaje verificado de ${links[links.length-1].name} : ${links[links.length-1].link} `)
-    }
-})
+    
+        let content=JSON.parse(reaction.message)
+        discordClient.channels.get("").send(`mensaje verificado de ${content.name} : ${content.link} `)
+        }
+        
+    
+});
 discordClient.login(discord.token)
