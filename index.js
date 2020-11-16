@@ -12,7 +12,7 @@ discordClient.on("ready",()=>{
 })
 // twitch
 twitchClient.connect();
-discordClient.on("message",msg=>{
+discordClient.on("message",async msg=>{
     if(msg.content==="$start"){
         setInterval(()=>{
             twitchClient.on("message",(channel,tags,message,self)=>{
@@ -29,9 +29,8 @@ discordClient.on("message",msg=>{
         },200)
     }
 });
-discordClient.on("messageReactionAdd",(reaction,user)=>{
+discordClient.on("messageReactionAdd",async(reaction,user)=>{
     if(reaction.emoji.name===":thumbsup:"){
-        //canal de verificacion , aqui pon el id del canal
         discordClient.channels.get("").send(`mensaje verificado de ${links[links.length-1].name} : ${links[links.length].link} `)
     }
 })
