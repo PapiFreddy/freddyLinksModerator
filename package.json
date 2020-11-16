@@ -1,18 +1,17 @@
 {
-  "name": "freddyLinksModerator",
+  "name": "freddyModeratorLink",
   "version": "1.0.0",
   "description": "this is a bot for moderate the links who you share in twitch",
   "main": "index.js",
   "repository": "https://github.com/PapiFreddy/freddyLinksModerator",
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord": "^0.8.2",
+    "discord.js": "^12.4.1",
     "tmi.js": "^1.5.0"
   }
 }
-
