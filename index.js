@@ -31,7 +31,7 @@ discordClient.on("message",async msg=>{
 });
 discordClient.on("messageReactionAdd",async(reaction,user)=>{
     if(reaction.emoji.name===":thumbsup:"){
-        discordClient.channels.get("").send(`mensaje verificado de ${links[links.length-1].name} : ${links[links.length].link} `)
+        discordClient.channels.get("").send(`mensaje verificado de ${links[links.length-1].name} : ${links[links.length-1].link} `)
     }
 })
 discordClient.login(discord.token)
