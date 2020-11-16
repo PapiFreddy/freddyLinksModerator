@@ -31,6 +31,7 @@ discordClient.on("message",msg=>{
 });
 discordClient.on("messageReactionAdd",(reaction,user)=>{
     if(reaction.emoji.name===":thumbsup:"){
+        //canal de verificacion , aqui pon el id del canal
         discordClient.channels.get("").send(`mensaje verificado de ${links[links.length-1].name} : ${links[links.length].link} `)
     }
 })
