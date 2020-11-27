@@ -7,3 +7,7 @@ npm i
 ```bash
 npm install
 ```
+para ejecutarlo puede hacerlo directamente enjecutando el comando `node index.js` pero  usando npm seria asi  
+```bash
+npm start
+```
