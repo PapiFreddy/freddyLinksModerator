@@ -13,7 +13,7 @@ asi evitamos tener que copiar y pegar los links que recibimos de twitch y los li
 
 
 <h1>
-como ejecutar el bot
+Como ejecutar el bot
 </h1>
 <h4>
 este es un proyecto para moderar los links en twitch, para poder usarlo debes de poner la configuracion en el arhivo settings.json
@@ -28,7 +28,7 @@ npm install
 ```
 
 <h4>
-para ejecutarlo puede hacerlo directamente enjecutando el comando `node index.js` pero  usando npm seria asi  
+Para ejecutarlo puede hacerlo directamente enjecutando el comando:
   </h4>
   
 ```bash
