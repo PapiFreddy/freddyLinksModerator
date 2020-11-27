@@ -2,14 +2,12 @@
 freddyLinksModerator
 </h1>
 <h4>
-La razon del proyecto es causada debido a que en el stream de Freddy suelen pasar muchos links, sobre todo cuando se ciertos eventos
-por lo cual hemos hecho esto para poder facilitar la moderacion de estos links; Debido a que ya hemos tenido ciertos problemas en donde Freddy
-ha abierto un link y ha aparecido cosas que rompen el TOS de twitch.
+la razon de la creacion de este proyecto es el facilitar la moderacion de links que recibimos y con ello poder facilitarle la vida al moderador para evitar tener que copiar y pegar los links verificados de manera manual sino que se hace esto para hacerlo de manera automatizada.Todo esto se origina de que hace mucho tiempo en el stream de Freddy tuvimos un pequeño problema donde un troll de mierda paso un link de la tula de town.
   </h4>
 <h1>
 ¿Como funciona?
 </h1>
-<h4>basicamente lo que hace es que los links que recibe los sube a un canal de discord en el cual los moderadores en turno pueden verificar el link, 
+<h4>Basicamente lo que hace es que los links que recibe los sube a un canal de discord en el cual los moderadores en turno pueden verificar el link, 
 asi evitamos tener que copiar y pegar los links que recibimos de twitch y los links que han sido verificados se envian a un canal de links verificados 😅.
   </h4>
 
