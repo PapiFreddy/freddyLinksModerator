@@ -28,7 +28,7 @@ npm install
 ```
 
 <h4>
-Para ejecutarlo puede hacerlo directamente enjecutando el comando:
+Para ejecutarlo puede hacerlo directamente ejecutando el comando:
   </h4>
   
 ```bash
